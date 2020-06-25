@@ -1,5 +1,7 @@
 import 'package:bookstore/constants.dart';
 import 'package:bookstore/widgets/fancy_app_bar.dart';
+import 'package:bookstore/widgets/fancy_tab_bar.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -21,6 +23,7 @@ class HomePage extends StatelessWidget {
                       Padding(
                         padding: EdgeInsets.only(
                           left: paddingSide,
+                          top: 5.0,
                         ),
                         child: Text(
                           'Discover books',
@@ -32,6 +35,11 @@ class HomePage extends StatelessWidget {
                       ),
                     ],
                   ),
+                ),
+                FancyTabBar(),
+                Container(
+                  height: 400,
+                  color: Colors.grey[100],
                 ),
               ],
             ),
