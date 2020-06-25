@@ -1,3 +1,4 @@
+import 'package:bookstore/constants.dart';
 import 'package:bookstore/widgets/profile_icon.dart';
 import 'package:flutter/material.dart';
 
@@ -5,7 +6,8 @@ class FancyAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 15.0, horizontal: 25.0),
+      padding: const EdgeInsets.only(
+          top: 10.0, left: paddingSide, right: paddingSide, bottom: 10),
       child: Container(
         color: Colors.white,
         child: Row(

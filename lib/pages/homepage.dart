@@ -14,21 +14,25 @@ class HomePage extends StatelessWidget {
       imageUrl: 'assets/images/book2.png',
       bookName: 'The Martian Chronicles',
       authorName: 'Ray Bradbury',
+      tag: 'book1',
     ),
     BookListPage(
       imageUrl: 'assets/images/book5.png',
       bookName: 'Go and Kick *SS',
       authorName: 'Phyllis Schwaiger',
+      tag: 'book2',
     ),
     BookListPage(
       imageUrl: 'assets/images/book3.png',
       bookName: 'Journal of Lies',
       authorName: 'Eleanor Fitzgerald',
+      tag: 'book3',
     ),
     BookListPage(
       imageUrl: 'assets/images/book4.png',
       bookName: 'Think outside the box',
       authorName: 'Amelia Pond',
+      tag: 'book4',
     ),
   ];
   final List<IconButton> bottomIcons = [
@@ -133,7 +137,7 @@ class HomePage extends StatelessWidget {
                   ),
                   FancyTabBar(),
                   Container(
-                    height: 350,
+                    height: 320,
                     color: Colors.grey[100],
                     child: ListView(
                       scrollDirection: Axis.horizontal,

@@ -24,7 +24,7 @@ class FancyTabBar extends StatelessWidget {
       children: <Widget>[
         Container(
           margin: EdgeInsets.only(top: 10.0),
-          height: 50,
+          height: 40,
           color: Colors.grey[100],
         ),
         ClipRRect(
@@ -44,7 +44,7 @@ class FancyTabBar extends StatelessWidget {
                     BorderRadius.only(bottomRight: Radius.circular(25.0))),
             child: Padding(
               padding: const EdgeInsets.only(
-                  left: paddingSide, top: 30.0, right: 60.0),
+                  left: paddingSide, top: 20.0, right: 60.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
