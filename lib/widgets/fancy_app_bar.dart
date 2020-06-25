@@ -5,8 +5,9 @@ class FancyAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 15.0, horizontal: 15.0),
+      padding: const EdgeInsets.symmetric(vertical: 15.0, horizontal: 25.0),
       child: Container(
+        color: Colors.white,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
