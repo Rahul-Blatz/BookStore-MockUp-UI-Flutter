@@ -61,6 +61,9 @@ flutter:
     - assets/images/person1.jpg
     - assets/images/book1.jpg
     - assets/images/book2.png
+    - assets/images/book3.png
+    - assets/images/book4.png
+    - assets/images/book5.png
   # assets:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg

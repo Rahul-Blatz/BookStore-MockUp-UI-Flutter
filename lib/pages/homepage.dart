@@ -9,6 +9,28 @@ import 'package:flutter_icons/flutter_icons.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class HomePage extends StatelessWidget {
+  final List<BookListPage> bookLists = [
+    BookListPage(
+      imageUrl: 'assets/images/book2.png',
+      bookName: 'The Martian Chronicles',
+      authorName: 'Ray Bradbury',
+    ),
+    BookListPage(
+      imageUrl: 'assets/images/book5.png',
+      bookName: 'Go and Kick *SS',
+      authorName: 'Phyllis Schwaiger',
+    ),
+    BookListPage(
+      imageUrl: 'assets/images/book3.png',
+      bookName: 'Journal of Lies',
+      authorName: 'Eleanor Fitzgerald',
+    ),
+    BookListPage(
+      imageUrl: 'assets/images/book4.png',
+      bookName: 'Think outside the box',
+      authorName: 'Amelia Pond',
+    ),
+  ];
   final List<IconButton> bottomIcons = [
     IconButton(
       icon: Icon(
@@ -113,8 +135,9 @@ class HomePage extends StatelessWidget {
                   Container(
                     height: 350,
                     color: Colors.grey[100],
-                    child: Center(
-                      child: BookListPage(),
+                    child: ListView(
+                      scrollDirection: Axis.horizontal,
+                      children: bookLists,
                     ),
                   ),
                   Container(
