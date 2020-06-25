@@ -1,5 +1,6 @@
 import 'package:bookstore/constants.dart';
 import 'package:bookstore/widgets/author_container.dart';
+import 'package:bookstore/widgets/book_list.dart';
 import 'package:bookstore/widgets/fancy_app_bar.dart';
 import 'package:bookstore/widgets/fancy_tab_bar.dart';
 import 'package:flutter/cupertino.dart';
@@ -112,6 +113,9 @@ class HomePage extends StatelessWidget {
                   Container(
                     height: 350,
                     color: Colors.grey[100],
+                    child: Center(
+                      child: BookListPage(),
+                    ),
                   ),
                   Container(
                     color: Colors.grey[100],
