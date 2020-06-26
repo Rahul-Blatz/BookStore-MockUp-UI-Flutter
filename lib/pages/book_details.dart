@@ -1,5 +1,6 @@
 import 'package:bookstore/constants.dart';
 import 'package:bookstore/widgets/fancy_button.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 
@@ -48,28 +49,60 @@ class BookDetailsPage extends StatelessWidget {
             ),
           ),
         ),
-        body: SingleChildScrollView(
-          child: Container(
-            child: Column(
-              children: <Widget>[
-                buildHero(context),
-                Container(
-                  color: Colors.grey[200],
-                  width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height - 400,
+        body: Stack(
+          children: <Widget>[
+            SingleChildScrollView(
+              child: Container(
+                child: Stack(
+                  children: <Widget>[
+                    Column(
+                      children: <Widget>[
+                        buildHero(context),
+                        Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(25.0),
+                            ),
+                            color: Colors.grey[200],
+                          ),
+                          width: MediaQuery.of(context).size.width,
+                          height: MediaQuery.of(context).size.height - 400,
+                        ),
+                      ],
+                    ),
+                    Positioned(
+                      bottom: 0.0,
+                      child: Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(25.0),
+                          ),
+                          color: Colors.grey[200],
+                        ),
+                        width: MediaQuery.of(context).size.width,
+                        height: MediaQuery.of(context).size.height - 380,
+                        child: Padding(
+                          padding: const EdgeInsets.only(top: 30.0),
+                          child: Column(
+                            children: <Widget>[
+                              Text('The Martian Chronicles'),
+                              Text('Ray Bradbury'),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                    Positioned(
+                      top: 320,
+                      left: 35,
+                      child: buildAuthorIcon(),
+                    ),
+                  ],
                 ),
-//            Stack(
-//              children: <Widget>[
-//                buildBackArrow(context),
-//                Positioned(
-//                  bottom: 0,
-//                  child: buildAuthorIcon(),
-//                ),
-//              ],
-//            ),
-              ],
+              ),
             ),
-          ),
+            buildBackArrow(context),
+          ],
         ),
       ),
     );
@@ -83,7 +116,7 @@ class BookDetailsPage extends StatelessWidget {
         border: Border.all(width: 2, color: Colors.grey[350]),
         image: DecorationImage(
           image: AssetImage(
-            'assets/images/person4.jpg',
+            'assets/images/person3.jpg',
           ),
           fit: BoxFit.cover,
         ),
@@ -116,7 +149,7 @@ class BookDetailsPage extends StatelessWidget {
     return Hero(
       tag: 'book1',
       child: Container(
-        height: 500,
+        height: 370,
         width: MediaQuery.of(context).size.width,
         child: Image.asset(
           'assets/images/book2.png',
