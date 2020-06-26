@@ -5,6 +5,7 @@ import 'package:bookstore/widgets/fancy_app_bar.dart';
 import 'package:bookstore/widgets/fancy_tab_bar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_animator/flutter_animator.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -139,9 +140,11 @@ class HomePage extends StatelessWidget {
                   Container(
                     height: 320,
                     color: Colors.grey[100],
-                    child: ListView(
-                      scrollDirection: Axis.horizontal,
-                      children: bookLists,
+                    child: BounceInRight(
+                      child: ListView(
+                        scrollDirection: Axis.horizontal,
+                        children: bookLists,
+                      ),
                     ),
                   ),
                   Container(
@@ -206,9 +209,11 @@ class AuthorWidget extends StatelessWidget {
           padding: const EdgeInsets.only(bottom: 20.0),
           child: Container(
             height: 100,
-            child: ListView(
-              scrollDirection: Axis.horizontal,
-              children: authorList,
+            child: BounceInRight(
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: authorList,
+              ),
             ),
           ),
         ),

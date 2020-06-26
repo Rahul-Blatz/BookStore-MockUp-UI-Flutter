@@ -1,6 +1,7 @@
 import 'package:bookstore/constants.dart';
 import 'package:bookstore/widgets/profile_icon.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_animator/flutter_animator.dart';
 
 class FancyAppBar extends StatelessWidget {
   @override
@@ -13,10 +14,12 @@ class FancyAppBar extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
-            Container(
-              height: 25,
-              width: 25,
-              child: Image.asset('assets/images/menu.png'),
+            BounceInLeft(
+              child: Container(
+                height: 25,
+                width: 25,
+                child: Image.asset('assets/images/menu.png'),
+              ),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
@@ -29,7 +32,9 @@ class FancyAppBar extends StatelessWidget {
                 SizedBox(
                   width: 20,
                 ),
-                ProfileIcon(imageUrl: 'assets/images/unsplash.jpg'),
+                BounceInRight(
+                  child: ProfileIcon(imageUrl: 'assets/images/unsplash.jpg'),
+                ),
               ],
             ),
           ],
