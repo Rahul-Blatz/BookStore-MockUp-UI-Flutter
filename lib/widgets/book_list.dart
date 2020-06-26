@@ -4,10 +4,16 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class BookListPage extends StatelessWidget {
+class BookListPage extends StatefulWidget {
   final String imageUrl, bookName, authorName, tag;
 
   BookListPage({this.bookName, this.authorName, this.imageUrl, this.tag});
+
+  @override
+  _BookListPageState createState() => _BookListPageState();
+}
+
+class _BookListPageState extends State<BookListPage> {
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -32,7 +38,7 @@ class BookListPage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(top: 20.0),
               child: Hero(
-                tag: tag,
+                tag: widget.tag,
                 child: Container(
                   decoration: BoxDecoration(
                     color: Colors.white,
@@ -47,7 +53,7 @@ class BookListPage extends StatelessWidget {
                   height: 200,
                   width: 150,
                   child: Image.asset(
-                    imageUrl,
+                    widget.imageUrl,
                     fit: BoxFit.fill,
                   ),
                 ),
@@ -56,7 +62,7 @@ class BookListPage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(top: 20.0),
               child: Text(
-                bookName,
+                widget.bookName,
                 style: GoogleFonts.quicksand(
                     color: Colors.black,
                     fontWeight: FontWeight.bold,
@@ -66,7 +72,7 @@ class BookListPage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(top: 4.0),
               child: Text(
-                authorName,
+                widget.authorName,
                 style: GoogleFonts.quicksand(
                     color: Colors.grey, fontWeight: FontWeight.w500),
               ),
