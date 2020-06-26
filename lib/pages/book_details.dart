@@ -3,6 +3,8 @@ import 'package:bookstore/widgets/fancy_button.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:smooth_star_rating/smooth_star_rating.dart';
 
 class BookDetailsPage extends StatelessWidget {
   @override
@@ -56,6 +58,7 @@ class BookDetailsPage extends StatelessWidget {
                 child: Stack(
                   children: <Widget>[
                     Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
                         buildHero(context),
                         Container(
@@ -77,16 +80,59 @@ class BookDetailsPage extends StatelessWidget {
                           borderRadius: BorderRadius.only(
                             topLeft: Radius.circular(25.0),
                           ),
-                          color: Colors.grey[200],
+                          color: Colors.grey[100],
                         ),
                         width: MediaQuery.of(context).size.width,
                         height: MediaQuery.of(context).size.height - 380,
                         child: Padding(
-                          padding: const EdgeInsets.only(top: 30.0),
+                          padding: const EdgeInsets.only(
+                              top: 60.0, left: paddingSide),
                           child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: <Widget>[
-                              Text('The Martian Chronicles'),
-                              Text('Ray Bradbury'),
+                              Text(
+                                'The Martian Chronicles',
+                                style: GoogleFonts.quicksand(
+                                  fontSize: 25,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.only(top: 5.0, left: 2),
+                                child: Text(
+                                  'Ray Bradbury',
+                                  style: GoogleFonts.quicksand(
+                                    fontSize: 15,
+                                    color: Colors.grey,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(vertical: 15.0),
+                                child: SmoothStarRating(
+                                  size: 15.0,
+                                  color: Colors.deepOrangeAccent,
+                                  isReadOnly: true,
+                                  starCount: 5,
+                                  rating: 4,
+                                  borderColor: Colors.grey,
+                                ),
+                              ),
+                              Container(
+                                width: 300,
+                                child: Text(
+                                  'The strange and wonderful tale of man\'s experience on Mars, filled with intense images and astonishing visions. Now part of the Voyager Classics collection.',
+                                  overflow: TextOverflow.ellipsis,
+                                  maxLines: 4,
+                                  style: GoogleFonts.quicksand(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                              ),
                             ],
                           ),
                         ),
@@ -94,7 +140,7 @@ class BookDetailsPage extends StatelessWidget {
                     ),
                     Positioned(
                       top: 320,
-                      left: 35,
+                      left: 25,
                       child: buildAuthorIcon(),
                     ),
                   ],
