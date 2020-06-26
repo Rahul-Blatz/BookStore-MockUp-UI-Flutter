@@ -17,7 +17,7 @@ Flutter Animator - https://pub.dev/packages/flutter_animator
 
 ## Demo
 
-[App Trial](assets/play.gif)  
+![App Trial](assets/play.gif)  
 
 
 ## Getting Started
